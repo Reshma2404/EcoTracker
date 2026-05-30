@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>EcoTrack — Smart Waste Management System</title> 
+  <link rel="stylesheet" href="style.css" /> 
+</head> 
+<body class="theme-leaf"> 
+ 
+  <header class="navbar sticky"> 
+    <div class="brand"> 
+      <a href="index.html" class="brand-link"> 
+        <span class="logo" aria-hidden="true"> 
+          
+          <svg viewBox="0 0 64 64" width="28" height="28"> 
+            <defs> 
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"> 
+                <stop offset="0%" stop-color="#2e7d32"/> 
+                <stop offset="100%" stop-color="#1b5e20"/> 
+              </linearGradient> 
+            </defs> 
+            <path d="M32 6c-10.5 0-19 8.5-19 19 0 13.5 19 33 19 33s19-19.5 19-33c0-10.5-8.5-19
+19-19z" fill="url(#g)"/> 
+            <circle cx="32" cy="25" r="10" fill="#fff"/> 
+            <path d="M27 25h5l-2-3m7 3h-5l2 3m-7 4l3-2-1 4m9-4-3 2 1-4" stroke="#2e7d32" 
+stroke-width="2" fill="none" /> 
+          </svg> 
+        </span> 
+        <span class="brand-text">ECOTRACK</span> 
+      </a> 
+    </div> 
+    <nav class="nav-links"> 
+      <a href="admin-login.html">Admin Panel</a> 
+      <a href="user-login.html">User Panel</a> 
+      <a href="about.html">About</a> 
+      <a href="services.html">Services</a> 
+    </nav> 
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button> 
+  </header> 
+ 
+ 
+  <section class="hero"> 
+    <div class="hero-content"> 
+      <h1 class="hero-title">Smart Waste Management System</h1> 
+      <p class="hero-subtitle">A Digital Platform for Reporting and Managing Public 
+Waste</p> 
+      <div class="hero-actions"> 
+        <a class="btn btn-primary" href="admin-login.html">Admin </a> 
+        <a class="btn btn-outline" href="user-login.html">User </a> 
+      </div> 
+    </div> 
+  </section> 
+ 
+  
+  <section id="about" class="section about"> 
+    <h2 class="section-title">About the website</h2> 
+    <div class="cards"> 
+      <article class="card reveal"> 
+        <h3 class="card-title">What is EcoTrack?</h3> 
+        <p class="card-text"> 
+          EcoTrack is a smart waste management system that lets citizens report public waste 
+          with images, location, and descriptions—so authorities can act faster. 
+        </p> 
+      </article> 
+      <article class="card reveal"> 
+        <h3 class="card-title">Why it is needed?</h3> 
+        <p class="card-text"> 
+          Traditional reporting is slow and manual. EcoTrack streamlines reporting, tracking, 
+          and cleanup actions—reducing delays and improving accountability. 
+        </p> 
+      </article> 
+      <article class="card reveal"> 
+        <h3 class="card-title">Advantages of EcoTrack</h3> 
+        <ul class="card-list"> 
+          <li>Promotes public participation in cleanliness</li> 
+          <li>Reduces environmental pollution</li> 
+          <li>Helps authorities manage waste efficiently</li> 
+          <li>Creates environmental responsibility and awareness</li> 
+        </ul> 
+      </article> 
+    </div> 
+  </section> 
+ 
+  
+  <section id="contact" class="section contact"> 
+    <h2 class="section-title">Contact</h2> 
+    <div class="contact-grid"> 
+      <form class="contact-form" id="contactForm" novalidate> 
+        <div class="form-field"> 
+          <label for="name">Name</label> 
+          <input id="name" name="name" type="text" placeholder="Your name" required /> 
+          <small class="error"></small> 
+        </div> 
+        <div class="form-field"> 
+          <label for="email">Email</label> 
+          <input id="email" name="email" type="email" placeholder="you@example.com" 
+required /> 
+          <small class="error"></small> 
+        </div> 
+        <div class="form-field"> 
+          <label for="message">Message</label> 
+          <textarea id="message" name="message" rows="4" placeholder="Write your 
+message..." required></textarea> 
+          <small class="error"></small> 
+        </div> 
+        <button class="btn btn-primary" type="submit">Send</button> 
+        <p class="form-success" role="status" aria-live="polite"></p> 
+      </form> 
+ <footer>
+      <div class="contact-info"> 
+        <h3 class="info-title">Vivekananda College of Engineering & Technology</h3> 
+        <p>Nehru Nagar, Puttur — 574 203, DK, Karnataka, India</p> 
+        <p>Phone: +08251-235955</p> 
+        <p>Email: principal@vcetputtur.ac.in</p> 
+        <div class="social"> 
+          <a class="social-btn" href="#" aria-label="Facebook">FB</a> 
+          <a class="social-btn" href="#" aria-label="Twitter">Tw </a> 
+          <a class="social-btn" href="#" aria-label="Instagram">Ig</a> 
+        </div> 
+      </div> 
+    </div> 
+  </section> 
+</footer>
+  <footer class="footer"> 
+    <p>© 2026 EcoTrack — Smart Waste Management System</p> 
+  </footer> 
+ 
+  <script src="script.js"></script> 
+</body> 
+</html>

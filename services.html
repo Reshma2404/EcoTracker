@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - EcoTrack Smart Waste Management</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            color: #1b5e20;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1em;
+        }
+
+        .nav-links a:hover {
+            color: #1b5e20;
+        }
+
+        .btn-login {
+            padding: 10px 20px;
+            background: #1b5e20;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #2e7d32;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1b5e20 0%, #0f3d1e 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #1b5e20;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+      
+        .step img,
+        .step-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0 auto 1rem;
+            display: block;
+        }
+                .service-icon {
+            font-size: 3.5em;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1b5e20;
+            font-size: 1.5em;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #666;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .service-features li:before {
+            content: "✓ ";
+            color: #2e7d32;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-section {
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .pricing-section h2 {
+            color: #1b5e20;
+            font-size: 2em;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: #1b5e20;
+            box-shadow: 0 8px 25px rgba(27, 94, 32, 0.2);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: white;
+            border: none;
+            transform: scale(1.05);
+        }
+
+        .pricing-card h4 {
+            font-size: 1.5em;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .pricing-card.featured .price {
+            color: #fff;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .pricing-card.featured li {
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .pricing-card li:before {
+            content: "✓ ";
+            color: #2e7d32;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-card.featured li:before {
+            color: #fff;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            padding: 10px;
+            background: #1b5e20;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .pricing-btn:hover {
+            background: #2e7d32;
+        }
+
+        .pricing-card.featured .pricing-btn {
+            background: white;
+            color: #1b5e20;
+        }
+
+        .pricing-card.featured .pricing-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .how-it-works {
+            background: #f5f5f5;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .how-it-works h2 {
+            color: #1b5e20;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: #1b5e20;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        
+        }
+
+        .step h4 {
+            color: #1b5e20;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        .footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .services-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .hero-section h1 {
+                font-size: 1.8em;
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html"> EcoTrack</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="user-login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
+
+    
+    <section class="hero-section">
+        <h1>Our Services</h1>
+        <p>Comprehensive Waste Management Solutions for Smart Cities</p>
+    </section>
+
+    
+    <div class="container">
+        
+        <section>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <img src="assets/Camera.png" alt="Issue Reporting" class="service-image">
+                    <div class="service-icon"></div>
+                    <h3>Issue Reporting</h3>
+                    <p>
+                        Easily report waste management issues in your area with detailed information and photos. Our intuitive interface makes reporting quick and straightforward.
+                    </p>
+                    <ul class="service-features">
+                        <li>Upload photos and descriptions</li>
+                        <li>Geo-location tagging</li>
+                        <li>Real-time tracking</li>
+                        <li>Notification updates</li>
+                    </ul>
+                </div>
+
+                
+                <div class="service-card">
+                    <img src="assets/Admin.jpg" alt="Admin Dashboard" class="service-image">
+                    <div class="service-icon"></div>
+                    <h3>Admin Dashboard</h3>
+                    <p>
+                        Powerful management tools for waste management authorities to monitor, track, and resolve all reported issues efficiently.
+                    </p>
+                    <ul class="service-features">
+                        <li>Comprehensive complaint view</li>
+                        <li>Status management</li>
+                        <li>Performance analytics</li>
+                        <li>Resource allocation</li>
+                    </ul>
+                </div>
+
+               
+                <div class="service-card">
+                    <img src="assets/Map.png" alt="Location Mapping" class="service-image">
+                    <div class="service-icon"></div>
+                    <h3>Location Mapping</h3>
+                    <p>
+                        Interactive maps showing waste collection centers, disposal facilities, and problem hotspots for better planning and management.
+                    </p>
+                    <ul class="service-features">
+                        <li>Real-time location data</li>
+                        <li>Collection center finder</li>
+                        <li>Route optimization</li>
+                        <li>Area heat mapping</li>
+                    </ul>
+                </div>
+
+                
+                <div class="service-card">
+                    <img src="assets/Analytics.png" alt="Analytics & Reports" class="service-image">
+                    <div class="service-icon"></div>
+                    <h3>Analytics & Reports</h3>
+                    <p>
+                        Detailed analytics and reporting features to understand waste patterns, track progress, and identify improvement areas.
+                    </p>
+                    <ul class="service-features">
+                        <li>Complaint statistics</li>
+                        <li>Resolution trends</li>
+                        <li>Performance metrics</li>
+                        <li>Custom reports</li>
+                    </ul>
+                </div>
+
+               
+                <div class="service-card">
+                    <img src="assets/Recycle.jpg" alt="Recycling Programs" class="service-image">
+                    <div class="service-icon"></div>
+                    <h3>Recycling Programs</h3>
+                    <p>
+                        Awareness and support for recycling initiatives, helping communities reduce waste and promote sustainable practices.
+                    </p>
+                    <ul class="service-features">
+                        <li>Recycling guidelines</li>
+                        <li>Community drives</li>
+                        <li>Educational content</li>
+                        <li>Incentive programs</li>
+                    </ul>
+                </div>
+
+               
+                <div class="service-card">
+                    <img src="assets/Notifications.jpg" alt="Smart Notifications" class="service-image">
+                    <div class="service-icon"></div>
+                    <h3>Smart Notifications</h3>
+                    <p>
+                        Real-time alerts and notifications about collection schedules, updates on reported issues, and community announcements.
+                    </p>
+                    <ul class="service-features">
+                        <li>Issue status updates</li>
+                        <li>Collection schedules</li>
+                        <li>Community alerts</li>
+                        <li>Personalized notifications</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+      
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                
+                <div class="step">
+                    <img src="assets/Register.jpg" alt="Register" class="step-image">
+                    <div class="step-number">1</div>
+                    <h4>Register</h4>
+                    <p>Create your account as a user or admin in just a few seconds</p>
+                </div>
+                <div class="step">
+                    <img src="assets/Report.png" alt="Report" class="step-image">
+                    <div class="step-number">2</div>
+                    <h4>Report</h4>
+                    <p>Submit waste issues with photos and location details</p>
+                </div>
+                <div class="step">
+                    <img src="assets/Map.png" alt="Track" class="step-image">
+                    <div class="step-number">3</div>
+                    <h4>Track</h4>
+                    <p>Monitor the status of your reports in real-time</p>
+                </div>
+                <div class="step">
+                    <img src="assets/resolve1.jpg" alt="Resolve" class="step-image" style="width: 160px; height: 120px;">
+                    <div class="step-number" >4</div>
+                    <h4>Resolve</h4>
+                    <p>Admins address and resolve issues promptly</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+    <footer class="footer">
+        <p>&copy; 2026 EcoTrack. All rights reserved.</p>
+        <p>Making the world greener, one service at a time. </p>
+        <p>Designed By Reshma ,Chaithra U M I MCA(VCET Puttur)</p>
+    </footer>
+</body>
+</html>

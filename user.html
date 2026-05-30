@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>EcoTrack — User Panel</title> 
+  <link rel="stylesheet" href="style.css" /> 
+</head> 
+<body class="theme-user"> 
+  <aside class="sidebar"> 
+    <div class="brand brand-compact"> 
+      <span class="logo"> 
+        <svg viewBox="0 0 64 64" width="24" height="24"> 
+          <path d="M32 6c-10.5 0-19 8.5-19 19 0 13.5 19 33 19 33s19-19.5 19-33c0-10.5-8.5-19
+19-19z" fill="#1b5e20"/> 
+          <circle cx="32" cy="25" r="10" fill="#fff"/> 
+        </svg> 
+      </span> 
+      <span class="brand-text">ECOTRACK</span> 
+    </div> 
+    <nav class="side-links"> 
+      <a class="active" href="user.html">Dashboard</a> 
+      <a href="#report">Report Waste</a> 
+      <a href="#awareness">Awareness Posts</a> 
+    </nav> 
+  </aside> 
+ 
+  <main class="main"> 
+    <header class="main-header"> 
+      <h1>Smart Waste Management System <span class="sub">User Panel</span></h1> 
+      <div class="header-actions"> 
+        <a class="btn btn-outline" href="index.html">Home</a> 
+      </div> 
+    </header> 
+ 
+    
+    <section id="report" class="panel"> 
+      <h2>Report Waste</h2> 
+      <form id="reportForm" class="grid-2" novalidate> 
+        <div class="form-field"> 
+          <label>Upload image</label> 
+          <input type="file" id="imageInput" accept="image/*" /> 
+          <div class="preview" id="imagePreview">+ Upload Image</div> 
+          <small class="error"></small> 
+        </div> 
+ 
+        <div class="form-field">
+          <label>Location</label>
+          <input type="text" id="locationInput" placeholder="e.g., Park, Market Street" required
+/>
+          <small class="hint">Map picker is simulated for demo.</small>
+          <small class="error"></small>
+        </div> 
+
+        <div class="form-field">
+          <label>Description</label>
+          <textarea id="descInput" placeholder="Describe the waste issue..." rows="4" required></textarea>
+          <small class="error"></small>
+        </div> 
+ 
+        <div class="form-actions span-2"> 
+          <button class="btn btn-primary" type="submit">Submit</button> 
+          <span class="toast" id="reportToast" aria-live="polite"></span> 
+        </div> 
+      </form> 
+    </section> 
+ 
+    
+    <section class="panel"> 
+      <h2>My Reports</h2> 
+      <div class="table-wrap"> 
+        <table class="table" id="userTable"> 
+          <thead> 
+            <tr> 
+              <th>#</th> 
+              <th>Image</th> 
+              <th>Location</th> 
+              <th>Description</th> 
+              <th>Status</th> 
+            </tr> 
+          </thead> 
+          <tbody>></tbody> 
+        </table> 
+      </div> 
+    </section> 
+ 
+     
+    <section id="awareness" class="panel"> 
+      <h2>Awareness Posts</h2> 
+      <div class="poster-grid"> 
+        <article class="poster"> 
+          <div class="poster-art"> 
+            <img src="assets/Clean.jpg" alt="Keep the City Clean" class="poster-img">
+          </div> 
+          <h3>Keep the City Clean</h3> 
+          <p>Use bins, segregate waste, and report overflowing spots.</p> 
+        </article> 
+        <article class="poster"> 
+          <div class="poster-art"> 
+            <img src="assets/Reuse.jpg" alt="Reduce Reuse Recycle" class="poster-img">
+          </div> 
+          <h3>Reduce • Reuse • Recycle</h3> 
+          <p>Choose reusable items and recycle plastics responsibly.</p> 
+        </article> 
+        <article class="poster"> 
+          <div class="poster-art"> 
+            <img src="assets/Community.jpg" alt="Community Cleanups" class="poster-img">
+          </div> 
+          <h3>Community Cleanups</h3> 
+          <p>Join local drives—small actions create big impact.</p> 
+        </article> 
+      </div> 
+    </section> 
+  </main> 
+ 
+  <script src="script.js"></script>
+</body>
+</html>

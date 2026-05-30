@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register — EcoTrack</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <form id="registerForm" class="auth-form" novalidate>
+      <h2>Create Account</h2>
+      <div class="form-field">
+        <label>Full name
+          <input type="text" name="name" required />
+          <small class="error"></small>
+        </label>
+      </div>
+      <div class="form-field">
+        <label>Email
+          <input type="email" name="email" required />
+          <small class="error"></small>
+        </label>
+      </div>
+      <div class="form-field">
+        <label>Password
+          <input type="password" id="regPassword" required />
+          <small class="error"></small>
+        </label>
+      </div>
+      <div class="form-field">
+        <label>Confirm Password
+          <input type="password" id="regConfirm" required />
+          <small class="error"></small>
+        </label>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Register</button>
+        <a class="form-link" href="user-login.html">Already have an account?</a>
+      </div>
+      <p class="auth-note">This is a frontend-only demo. Registration does not persist data.</p>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

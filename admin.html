@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>EcoTrack — Admin Dashboard</title> 
+  <link rel="stylesheet" href="style.css" /> 
+</head> 
+<body class="theme-dashboard"> 
+  <aside class="sidebar"> 
+    <div class="brand brand-compact"> 
+      <span class="logo"> 
+        <svg viewBox="0 0 64 64" width="24" height="24"> 
+          <path d="M32 6c-10.5 0-19 8.5-19 19 0 13.5 19 33 19 33s19-19.5 19-33c0-10.5-8.5-19
+19-19z" fill="#1b5e20"/> 
+          <circle cx="32" cy="25" r="10" fill="#fff"/> 
+        </svg> 
+      </span> 
+      <span class="brand-text">ECOTRACK</span> 
+    </div> 
+    <nav class="side-links"> 
+      <a class="active" href="admin.html">Dashboard</a> 
+      <a href="#" id="navReports">Reports</a> 
+      <a href="#" id="navAwareness">Awareness Campaigns</a> 
+    </nav> 
+  </aside> 
+ 
+  <main class="main"> 
+    <header class="main-header"> 
+      <h1>Dashboard</h1> 
+      <div class="header-actions"> 
+        <a class="btn btn-outline" href="index.html">Home</a> 
+      </div> 
+    </header> 
+ 
+    
+    <section class="stats"> 
+      <div class="stat-card"> 
+        <div class="stat-value" id="statTotal">105</div> 
+        <div class="stat-label">Total Reports</div> 
+      </div> 
+      <div class="stat-card warn"> 
+        <div class="stat-value" id="statPending">27</div> 
+        <div class="stat-label">Pending</div> 
+      </div> 
+      <div class="stat-card info"> 
+        <div class="stat-value" id="statProgress">53</div> 
+        <div class="stat-label">In Progress</div> 
+      </div> 
+      <div class="stat-card success"> 
+        <div class="stat-value" id="statCleaned">25</div> 
+        <div class="stat-label">Cleaned</div> 
+      </div> 
+    </section> 
+ 
+     
+    <section class="panel"> 
+      <h2>Update Status</h2> 
+      <div class="update-row"> 
+        <select id="updateSelect" class="select"> 
+          <option value="" disabled selected>Select report</option> 
+        </select> 
+        <select id="statusSelect" class="select"> 
+          <option value="Pending">Pending</option> 
+          <option value="In Progress">In Progress</option> 
+          <option value="Cleaned">Cleaned</option> 
+        </select> 
+        <button class="btn btn-primary" id="updateBtn">Update</button> 
+        <span class="toast" id="updateToast" aria-live="polite"></span> 
+      </div> 
+    </section> 
+ 
+     
+    <section class="panel"> 
+      <h2>User Submissions</h2> 
+      <div class="table-wrap"> 
+        <table class="table" id="adminTable"> 
+          <thead> 
+            <tr> 
+              <th>Image</th> 
+              <th>Location</th> 
+              <th>Description</th> 
+              <th>Status</th> 
+              
+            </tr> 
+          </thead> 
+          <tbody></tbody> 
+        </table> 
+      </div> 
+    </section> 
+  </main> 
+ 
+  <script src="script.js"></script> 
+</body> 
+</html>

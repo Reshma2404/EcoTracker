@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About EcoTrack - Smart Waste Management</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            color: #1b5e20;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1em;
+        }
+
+        .nav-links a:hover {
+            color: #1b5e20;
+        }
+
+        .btn-login {
+            padding: 10px 20px;
+            background: #1b5e20;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #2e7d32;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1b5e20 0%, #0f3d1e 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        .about-section img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-content h2 {
+            color: #1b5e20;
+            font-size: 2em;
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            font-size: 1.05em;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #1b5e20;
+        }
+
+        .card h3 {
+            color: #1b5e20;
+            font-size: 1.5em;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            color: #1b5e20;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .team-section h2 {
+            color: #1b5e20;
+            font-size: 2em;
+            margin-bottom: 2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            color: white;
+            overflow: hidden;
+            border: 4px solid #1b5e20;
+        }
+
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member h4 {
+            color: #1b5e20;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .about-section,
+            .mission-vision,
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section h1 {
+                font-size: 1.8em;
+            }
+
+            .about-content h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <nav class="navbar">
+        <a href="index.html"> EcoTrack</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="user-login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
+
+   
+    <section class="hero-section">
+        <h1>About EcoTrack</h1>
+        <p>Transforming Waste Management Through Technology</p>
+    </section>
+
+    
+    <div class="container">
+        
+        <section class="about-section">
+            <div>
+                <img src="assets/logo1.png" alt="EcoTrack System">
+            </div>
+            <div class="about-content">
+                <h2>What is EcoTrack?</h2>
+                <p>
+                    EcoTrack is a comprehensive smart waste management system designed to revolutionize how cities handle waste collection and disposal. Our platform bridges the gap between citizens and waste management authorities using cutting-edge technology.
+                </p>
+                <p>
+                    With EcoTrack, users can easily report waste-related issues, track their status in real-time, and contribute to making their communities cleaner and more sustainable. Our admin dashboard provides city officials with complete visibility and control over waste management operations.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="mission-vision">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>
+                    To create a cleaner, healthier environment by enabling efficient waste management through community participation and smart technology. We aim to reduce pollution, promote recycling, and improve quality of life in urban areas.
+                </p>
+            </div>
+            <div class="card">
+                <h3> Our Vision</h3>
+                <p>
+                    A world where waste is managed responsibly and sustainably. We envision smart cities where citizens and authorities work together seamlessly to maintain clean, green communities for future generations.
+                </p>
+            </div>
+        </section>
+
+       
+        <section>
+            <h2 style="text-align: center; color: #1b5e20; font-size: 2em; margin: 2rem 0;">Key Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h4>Easy Reporting</h4>
+                    <p>Users can quickly report waste issues with photos and location details</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h4>Real-time Tracking</h4>
+                    <p>Track the status of your complaints from pending to resolution</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h4>Location Mapping</h4>
+                    <p>View waste collection centers and disposal facilities on interactive maps</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h4>Admin Dashboard</h4>
+                    <p>Comprehensive management interface for authorities to handle complaints</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h4>Smart Notifications</h4>
+                    <p>Receive updates on complaint status and local waste management news</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h4>Sustainability Focus</h4>
+                    <p>Promotes recycling and environmental consciousness in communities</p>
+                </div>
+            </div>
+        </section>
+
+
+        
+        <section style="background: linear-gradient(135deg, #1b5e20, #0f3d1e); color: white; border-radius: 15px; padding: 3rem; margin: 3rem 0; text-align: center;">
+            <h2 style="color: white; margin-bottom: 2rem;">Our Impact</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <div>
+                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 0.5rem;">100+</div>
+                    <p>Complaints Resolved</p>
+                </div>
+                <div>
+                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 0.5rem;">50+</div>
+                    <p>Active Users</p>
+                </div>
+                <div>
+                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 0.5rem;">25+</div>
+                    <p>Cities Covered</p>
+                </div>
+                <div>
+                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 0.5rem;">85%</div>
+                    <p>Satisfaction Rate</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <footer class="footer">
+        <p>&copy; 2026 EcoTrack. All rights reserved.</p>
+        <p>Making the world greener, one complaint at a time. </p>
+         <p>Designed By Reshma ,Chaithra U M I MCA(VCET Puttur)</p>
+    </footer>
+</body>
+</html>
